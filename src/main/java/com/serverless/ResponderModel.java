@@ -2,6 +2,9 @@ package com.serverless;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Comparator;
 
 public class ResponderModel {
     private final String teamName = "teamdevco";
@@ -25,11 +28,11 @@ public class ResponderModel {
             else largest = secondNum;
             return String.valueOf(largest);
         }
-        
-        Matcher sumMatcher2 = Pattern.compile("which of the following numbers is the largest: (\\d+), (\\d+), (\\d+), (\\d+)").matcher(question);
+
+        Matcher sumMatcher2 = Pattern.compile(".*which of the following numbers is the largest: (\\d+), (\\d+), (\\d+), (\\d+)").matcher(question);
         if (sumMatcher2.matches()) {
             List numbers = Arrays.asList(Integer.parseInt(sumMatcher2.group(1)),Integer.parseInt(sumMatcher2.group(2)),Integer.parseInt(sumMatcher2.group(3)),Integer.parseInt(sumMatcher2.group(4)));
-            Integer maxValue = numbers.stream().max(Comparator.naturalOrder()).get();
+            Integer maxValue = (Integer) numbers.stream().max(Comparator.naturalOrder()).get();
             return String.valueOf(maxValue);
         }
         
