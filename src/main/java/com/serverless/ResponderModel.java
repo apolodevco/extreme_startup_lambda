@@ -26,6 +26,15 @@ public class ResponderModel {
             return String.valueOf(largest);
         }
         
+        Matcher sumMatcher2 = Pattern.compile("which of the following numbers is the largest: (\\d+), (\\d+), (\\d+), (\\d+)").matcher(question);
+        if (sumMatcher2.matches()) {
+            List numbers = Arrays.asList(Integer.parseInt(sumMatcher2.group(1)),Integer.parseInt(sumMatcher2.group(2)),Integer.parseInt(sumMatcher2.group(3)),Integer.parseInt(sumMatcher2.group(4)));
+            Integer maxValue = numbers.stream().max(Comparator.naturalOrder()).get();
+            return String.valueOf(maxValue);
+        }
+        
+
+        
         return teamName;
     }
 
