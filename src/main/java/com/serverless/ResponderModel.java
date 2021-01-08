@@ -4,7 +4,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class ResponderModel {
-    private final String teamName = "devco";
+    private final String teamName = "teamdevco";
 
     public String answer(String question) {
         if ("".equals(question)){
