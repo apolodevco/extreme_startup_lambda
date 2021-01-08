@@ -16,10 +16,10 @@ public class ResponderModel {
             return String.valueOf(Integer.parseInt(sumMatcher.group(1)) + Integer.parseInt(sumMatcher.group(2)));
         }
         
-        Matcher sumMatcher = Pattern.compile(".*which of the following numbers is the largest: (\\d+), (\\d+)").matcher(question);
-        if (sumMatcher.matches()) {
-            Integer firstNum = Integer.parseInt(sumMatcher.group(1));
-            Integer secondNum = Integer.parseInt(sumMatcher.group(2));
+        Matcher sumMatcher1 = Pattern.compile(".*which of the following numbers is the largest: (\\d+), (\\d+)").matcher(question);
+        if (sumMatcher1.matches()) {
+            Integer firstNum = Integer.parseInt(sumMatcher1.group(1));
+            Integer secondNum = Integer.parseInt(sumMatcher1.group(2));
             Integer largest = 0;
             if(firstNum > secondNum) largest = firstNum;
             else largest = secondNum;
