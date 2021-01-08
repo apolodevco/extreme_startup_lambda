@@ -19,9 +19,11 @@ public class ResponderModel {
         Matcher sumMatcher = Pattern.compile(".*which of the following numbers is the largest: (\\d+), (\\d+)").matcher(question);
         if (sumMatcher.matches()) {
             Integer firstNum = Integer.parseInt(sumMatcher.group(1));
-            Integer secondNum = Integer.parseInt(sumMatcher.group(2);
-            if( firstNum > secondNum) return firstNum;
-            else return secondNum;
+            Integer secondNum = Integer.parseInt(sumMatcher.group(2));
+            Integer largest = 0;
+            if(firstNum > secondNum) largest = firstNum;
+            else largest = secondNum;
+            return String.valueOf(largest);
         }
         
         return teamName;
