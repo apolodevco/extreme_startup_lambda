@@ -21,7 +21,7 @@ public class ResponderModel {
             Integer firstNum = Integer.parseInt(sumMatcher.group(1));
             Integer secondNum = Integer.parseInt(sumMatcher.group(2);
             if( firstNum > secondNum) return firstNum;
-            else return secondNum
+            else return secondNum;
         }
         
         return teamName;
