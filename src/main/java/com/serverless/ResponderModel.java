@@ -36,6 +36,12 @@ public class ResponderModel {
             return String.valueOf(maxValue);
         }
         
+        Matcher sumMatcher3 = Pattern.compile(".*what is (\\d+) multiplied by (\\d+)").matcher(question);
+        if (sumMatcher3.matches()) {
+            return String.valueOf(Integer.parseInt(sumMatcher.group(1)) * Integer.parseInt(sumMatcher.group(2)));
+        }
+
+        
 
         
         return teamName;
